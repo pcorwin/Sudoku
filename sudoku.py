@@ -111,7 +111,7 @@ def main():
     difficulties = ['e', 'm', 'h']
     difficulty = 'x'
 
-    print("Sodoku\n_____________________________\n")
+    print("Sudoku\n_____________________________\n")
 
     while difficulty not in difficulties:
         difficulty = input("Choose difficulty - Easy(e), Medium(m), or Hard(h): ")
