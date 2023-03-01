@@ -7,17 +7,17 @@ def generate_board(b, d):
     seed = []
 
     for i in nums:
-        b[c][c]=i
-        c+=1
+        b[c][c] = i
+        c += 1
 
     solve(b)
 
     if d == 'e':
-        randomizer = 15
+        randomizer = r.randint(15, 20)
     elif d == 'm':
-        randomizer = 30
+        randomizer = r.randint(25, 35)
     elif d == 'h':
-        randomizer = 70
+        randomizer = r.randint(65, 70)
 
     while len(seed) < randomizer:
         seed.append((r.randint(0, 8), r.randint(0, 8)))
@@ -26,19 +26,16 @@ def generate_board(b, d):
         b[s[0]][s[1]] = 0
 
 def solve(b):
-    find = find_empty(b)
-    if not find:
+    if not find_empty(b):
         return True
     else:
-        row, col = find
+        row, col = find_empty(b)
 
     for i in range(1, 10):
         if is_valid(b, i, (row, col)):
             b[row][col] = i
-
             if solve(b):
                 return True
-
             b[row][col] = 0
 
     return False
@@ -91,7 +88,7 @@ def find_empty(b):
     for r in range(len(b)):
         for c in range(len(b[0])):
             if b[r][c] == 0:
-                return (r, c)
+                return r, c
 
     return None
 
