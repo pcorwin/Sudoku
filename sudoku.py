@@ -37,7 +37,6 @@ def solve(b):
             if solve(b):
                 return True
             b[row][col] = 0
-
     return False
 
 def valid_row(b, n, p):
@@ -83,13 +82,11 @@ def print_board(b):
                 print(str(b[i][j]) + " ", end="")
     print("______________________________")
 
-
 def find_empty(b):
     for r in range(len(b)):
         for c in range(len(b[0])):
             if b[r][c] == 0:
                 return r, c
-
     return None
 
 def main():
