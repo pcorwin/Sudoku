@@ -12,11 +12,15 @@ def generate_board(b, d):
 
     solve(b)
 
-    if d == 'e':
+    if d == 'v':
         randomizer = r.randint(15, 20)
+    elif d == 'e':
+        randomizer = r.randint(20, 30)
     elif d == 'm':
-        randomizer = r.randint(25, 35)
+        randomizer = r.randint(35, 50)
     elif d == 'h':
+        randomizer = r.randint(50, 60)
+    elif d == 'x':
         randomizer = r.randint(65, 70)
 
     while len(seed) < randomizer:
@@ -102,13 +106,13 @@ def main():
         [0, 0, 0, 0, 0, 0, 0, 0, 0]
     ]
 
-    difficulties = ['e', 'm', 'h']
-    difficulty = 'x'
+    difficulties = ['v', 'e', 'm', 'h', 'x']
+    difficulty = 'z'
 
     print("Sudoku\n_____________________________\n")
 
     while difficulty not in difficulties:
-        difficulty = input("Choose difficulty - Easy(e), Medium(m), or Hard(h): ")
+        difficulty = input("Choose difficulty\nVery Easy (v), Easy(e), Medium(m), Hard(h), or Expert(x): ")
     print("______________________________\n")
     generate_board(board, difficulty)
     print_board(board)
