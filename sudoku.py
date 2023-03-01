@@ -15,11 +15,11 @@ def generate_board(b, d):
     if d == 'v':
         randomizer = r.randint(15, 20)
     elif d == 'e':
-        randomizer = r.randint(20, 30)
+        randomizer = r.randint(21, 30)
     elif d == 'm':
-        randomizer = r.randint(35, 50)
+        randomizer = r.randint(31, 49)
     elif d == 'h':
-        randomizer = r.randint(50, 60)
+        randomizer = r.randint(50, 64)
     elif d == 'x':
         randomizer = r.randint(65, 70)
 
