@@ -1,4 +1,6 @@
 # Sudoku
 
-## Basics
+## About
+
+Implementation of CLI sudoku game.
 
